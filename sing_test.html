@@ -26,23 +26,18 @@ Send bugs and suggestions to <texi2html@mathematik.uni-kl.de>
         outPrompt: '==>',
         selector: '.smallexample',
       },
-      bootstrap: true,
       requestKernel: true
     }
 </script>
 
 
-<script type="text/javascript" src="/home/sebastian/Dokumente/projects/thebelab/lib/index.js"></script>
+<script type="text/javascript" src="thebelablib/index.js"></script>
+<link   href="thebe_status_field.css" rel="stylesheet" type="text/css"/>
+<script src="thebe_status_field.js" type="text/javascript" ></script>
 
 <script type="text/javascript">
 window.onload = function() {
-  thebelab.on("status", function(evt, data) {
-    console.log("Status changed:", data.status, data.message);
-    $(".thebe_status_field")
-      .attr("class", "thebe_status_field thebe-status-" + data.status)
-      .text(data.status);
-  });
-  thebelab.bootstrap();
+  thebe_place_activate_button();
 };
 </script>
 
